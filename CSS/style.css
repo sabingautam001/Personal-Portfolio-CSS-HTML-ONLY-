@@ -7,7 +7,7 @@
 body {
   background-color: rgba(0, 0, 0, 0.1);
   height: 100vh;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 #gif-overlay {
@@ -221,7 +221,7 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
-  /* animation: flip 10s infinite linear; */
+  animation: flip 10s infinite linear;
   transform-style: preserve-3d;
   z-index: -10;
   img {
