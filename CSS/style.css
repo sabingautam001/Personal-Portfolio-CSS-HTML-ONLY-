@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  /* overflow-x: hidden; */
+}
+
+#gif-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  animation: suddenSnap 3.3s forwards;
+}
+
+@keyframes suddenSnap {
+  0% {
+    visibility: visible;
+  }
+  99.9% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+#gif-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+/* .......................................................................................... */
+/* ACTUAL CSS STARTS HERE */
+/* ................................................................................... */
+/* NAVIGATION CUSTOMS */
+
+header {
+  height: 50px;
+  width: 100%;
+  padding: 0 10%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  backdrop-filter: blur(50px);
+}
+
+header > nav {
+  width: 50%;
+}
+
+.navl {
+  display: flex;
+  align-items: center;
+}
+
+.sabin {
+  font-family:
+    cursive, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline overline line-through;
+}
+
+.navr {
+  display: flex;
+  justify-content: end;
+}
+
+.navr > ul {
+  height: 100%;
+  display: block;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  li {
+    width: auto;
+    height: 35px;
+    font-size: 18px;
+    font-family: sans-serif;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navr > ul > li:hover {
+  background-color: rgb(100, 116, 139);
+  border-radius: 10px;
+}
+
+.navr2 {
+  display: none;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+}
+
+/*MAIN SECTION HERE.........................................................*/
+
+main {
+  padding-top: 70px;
+  margin: 0 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.me {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.intro {
+  width: 55%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    font-size: 50px;
+    margin-top: 5%;
+    letter-spacing: -0.05em;
+    text-decoration: underline;
+    background: linear-gradient(
+      135deg,
+      black,
+      gray,
+      black,
+      gray,
+      black,
+      gray,
+      black,
+      gray,
+      black,
+      gray,
+      black,
+      gray,
+      black,
+      gray
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.intro_text {
+  font-size: 20px;
+  margin: 5%;
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: justify;
+}
+
+.social {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0% 3%;
+  flex-direction: row;
+  gap: 10px;
+  div {
+    position: relative;
+    /* padding: 1%; */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
+.social > div:hover {
+  border: 2px solid rgba(0, 0, 0);
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 20;
+  background-color: #000000;
+  color: white;
+  border-radius: 25px;
+  bottom: 0;
+  padding: 6px 10px;
+  .tran {
+    position: absolute;
+    bottom: -12px;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 0px;
+    transform: rotate(45deg);
+  }
+}
+
+.profile {
+  width: 40%;
+  margin: 5%;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* animation: flip 10s infinite linear; */
+  transform-style: preserve-3d;
+  z-index: -10;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid gray;
+  }
+}
+
+@keyframes flip {
+  0% {
+    top: 0px;
+    transform: rotateX(0deg) rotateZ(720deg) scale(0);
+    border: 50px solid rgba(0, 0, 0, 0.5);
+    /* border-radius: 50%; */
+  }
+  10% {
+    top: 0;
+    transform: rotateX(0deg) rotateZ(0deg) scale(1);
+    border: 0px solid #000000;
+    border-radius: 50%;
+  }
+  90% {
+    top: 0;
+    transform: rotateX(0deg) rotateZ(0deg) scale(1);
+    border: 0px solid #000000;
+    border-radius: 50%;
+  }
+  100% {
+    top: 0px;
+    transform: rotateX(0deg) rotateZ(720deg) scale(0);
+    border: 50px solid rgba(0, 0, 0, 0.5);
+    /* border-radius: 50%; */
+  }
+}
+
+/* FOOTER SECTION STARTS HERE */
+
+footer {
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  div {
+    margin-top: 20px;
+  }
+}
+
+/* FOR MOBILE PHONES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..... */
+@media (max-width: 700px) {
+  #gif-overlay {
+    display: none;
+  }
+
+  .navr {
+    display: none;
+  }
+
+  .navr2 {
+    display: flex;
+  }
+
+  .intro > h1 {
+    font-size: 40px;
+  }
+}
+
+/* FOR MOBILE + TABLET BOTH.............................................. */
+@media (max-width: 1000px) {
+  .intro,
+  .profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
