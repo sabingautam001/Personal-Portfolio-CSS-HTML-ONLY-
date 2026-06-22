@@ -78,7 +78,6 @@ header > nav {
 
 .navr > ul {
   height: 100%;
-  display: block;
   display: flex;
   align-items: center;
   list-style: none;
@@ -169,7 +168,6 @@ main {
 }
 
 .social {
-  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -178,8 +176,6 @@ main {
   flex-direction: row;
   gap: 10px;
   div {
-    position: relative;
-    /* padding: 1%; */
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     height: 30px;
@@ -195,37 +191,18 @@ main {
   background-color: rgba(0, 255, 255, 0.1);
 }
 
-.tooltip {
-  position: absolute;
-  z-index: 20;
-  background-color: #000000;
-  color: white;
-  border-radius: 25px;
-  bottom: 0;
-  padding: 6px 10px;
-  .tran {
-    position: absolute;
-    bottom: -12px;
-    width: 20px;
-    height: 20px;
-    background-color: black;
-    border-radius: 0px;
-    transform: rotate(45deg);
-  }
-}
-
 .profile {
   width: 40%;
-  margin: 5%;
   aspect-ratio: 1/1;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   animation: flip 10s infinite linear;
   transform-style: preserve-3d;
-  z-index: -10;
+  z-index: -1;
   img {
-    width: 100%;
+    width: 70%;
     height: auto;
     border-radius: 50%;
     border: 3px solid gray;
@@ -234,39 +211,80 @@ main {
 
 @keyframes flip {
   0% {
-    top: 0px;
     transform: rotateX(0deg) rotateZ(720deg) scale(0);
     border: 50px solid rgba(0, 0, 0, 0.5);
-    /* border-radius: 50%; */
   }
   10% {
-    top: 0;
     transform: rotateX(0deg) rotateZ(0deg) scale(1);
     border: 0px solid #000000;
     border-radius: 50%;
   }
   90% {
-    top: 0;
     transform: rotateX(0deg) rotateZ(0deg) scale(1);
     border: 0px solid #000000;
     border-radius: 50%;
   }
   100% {
-    top: 0px;
     transform: rotateX(0deg) rotateZ(720deg) scale(0);
     border: 50px solid rgba(0, 0, 0, 0.5);
-    /* border-radius: 50%; */
   }
 }
 
 /* FOOTER SECTION STARTS HERE */
 
 footer {
-  height: 40vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  div {
-    margin-top: 20px;
-  }
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin: 20px 0;
+  padding: 1% 10%;
+}
+
+.footer_links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_links > div > ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer_links > div > ul > li {
+  font-size: 20px;
+}
+
+.footer_links > div > ul > li:hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+.footer-divide{
+  display: none;
+}
+
+.footer-divide-2{
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.footer_credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: 10px 0;
+}
+.footer_credit > p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* FOR MOBILE PHONES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>..... */
@@ -286,6 +304,21 @@ footer {
   .intro > h1 {
     font-size: 40px;
   }
+  .footer_links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer_links > div {
+    width: 100%;
+  }
+
+.footer-divide{
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+}
+
 }
 
 /* FOR MOBILE + TABLET BOTH.............................................. */
@@ -300,9 +333,6 @@ footer {
 
   .profile {
     width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .profile > img {
@@ -315,5 +345,20 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
+  }
+
+  .footer_links > div {
+    flex: 1;
+    padding: 0 1%;
+  }
+
+  .footer_links > div > ul > li {
+    font-size: 18px;
+  }
+
+  .footer_links > div > ul {
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
   }
 }
