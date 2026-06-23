@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0);
+}
+
+.footer_links > div > ul > li > a {
+  color: #ffffff;
+}
 body {
   background-color: rgba(0, 0, 0, 0.1);
   height: 100vh;
@@ -50,7 +58,7 @@ header {
   display: flex;
   flex-direction: row;
   position: fixed;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
 }
 
 header > nav {
@@ -88,11 +96,11 @@ header > nav {
     font-size: 18px;
     font-family: sans-serif;
     transition: 0.3s ease-in;
-    cursor: pointer;
     padding: 0 10px;
     border-radius: 8px;
     display: flex;
     align-items: center;
+    text-shadow: 1px 1px 1px white;
   }
 }
 
@@ -111,12 +119,14 @@ header > nav {
 /*MAIN SECTION HERE.........................................................*/
 
 main {
-  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+SECTION {
   margin: 0 10%;
   width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .me {
@@ -163,7 +173,7 @@ main {
   font-size: 20px;
   margin: 5%;
   line-height: 1.3;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.7);
   text-align: justify;
 }
 
@@ -182,7 +192,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
   }
 }
 
@@ -192,7 +201,7 @@ main {
 }
 
 .profile {
-  width: 40%;
+  width: 45%;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
@@ -212,21 +221,51 @@ main {
 @keyframes flip {
   0% {
     transform: rotateX(0deg) rotateZ(720deg) scale(0);
-    border: 50px solid rgba(0, 0, 0, 0.5);
   }
   10% {
     transform: rotateX(0deg) rotateZ(0deg) scale(1);
-    border: 0px solid #000000;
-    border-radius: 50%;
   }
   90% {
     transform: rotateX(0deg) rotateZ(0deg) scale(1);
-    border: 0px solid #000000;
-    border-radius: 50%;
   }
   100% {
     transform: rotateX(0deg) rotateZ(720deg) scale(0);
-    border: 50px solid rgba(0, 0, 0, 0.5);
+  }
+}
+
+.top-projects {
+  width: 100%;
+  margin: 0;
+  padding: 0 10%;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  background-image: url(../IMAGES/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  div {
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(128, 128, 128, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 10px white;
+    color: #ffffff;
+    h3 {
+      text-decoration: underline;
+    }
+  }
+  h1 {
+    width: 100%;
+    text-decoration: underline;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -260,14 +299,13 @@ footer {
 
 .footer_links > div > ul > li:hover {
   color: aqua;
-  cursor: pointer;
 }
 
-.footer-divide{
+.footer-divide {
   display: none;
 }
 
-.footer-divide-2{
+.footer-divide-2 {
   display: flex;
   width: 100%;
   margin: 10px 0;
@@ -304,6 +342,13 @@ footer {
   .intro > h1 {
     font-size: 40px;
   }
+
+  .top-projects > div {
+    padding: 10px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+
   .footer_links {
     display: flex;
     flex-direction: column;
@@ -313,12 +358,11 @@ footer {
     width: 100%;
   }
 
-.footer-divide{
-  display: flex;
-  width: 100%;
-  margin: 10px 0;
-}
-
+  .footer-divide {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 /* FOR MOBILE + TABLET BOTH.............................................. */
